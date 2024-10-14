@@ -13,7 +13,7 @@ protocol DetailViewInterface: AnyObject {
 }
 
 final class DetailViewController: UIViewController {
-
+// DETAY SAYFASINA YORUM SATIRI EKLEDİMMMM 
     private lazy var viewModel = DetailViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
