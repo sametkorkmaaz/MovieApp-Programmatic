@@ -10,6 +10,7 @@
 		112E0FDF2CBDA27300EE9226 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 112E0FDE2CBDA27300EE9226 /* FirebaseAnalytics */; };
 		112E0FE12CBDA27300EE9226 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 112E0FE02CBDA27300EE9226 /* FirebaseCrashlytics */; };
 		112E0FE32CBDA27300EE9226 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 112E0FE22CBDA27300EE9226 /* FirebaseRemoteConfig */; };
+		11B11ED12CCB036300FEC138 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 11B11ED02CCB036300FEC138 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11B11ED12CCB036300FEC138 /* Kingfisher in Frameworks */,
 				112E0FE32CBDA27300EE9226 /* FirebaseRemoteConfig in Frameworks */,
 				112E0FDF2CBDA27300EE9226 /* FirebaseAnalytics in Frameworks */,
 				112E0FE12CBDA27300EE9226 /* FirebaseCrashlytics in Frameworks */,
@@ -90,6 +92,7 @@
 				112E0FDE2CBDA27300EE9226 /* FirebaseAnalytics */,
 				112E0FE02CBDA27300EE9226 /* FirebaseCrashlytics */,
 				112E0FE22CBDA27300EE9226 /* FirebaseRemoteConfig */,
+				11B11ED02CCB036300FEC138 /* Kingfisher */,
 			);
 			productName = "MovieApp-Programmatic";
 			productReference = 112E0F852CBCE90500EE9226 /* MovieApp-Programmatic.app */;
@@ -121,6 +124,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				112E0FDD2CBDA27300EE9226 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				11B11ECF2CCB036300FEC138 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 112E0F862CBCE90500EE9226 /* Products */;
@@ -167,7 +171,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -195,7 +199,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,6 +364,14 @@
 				minimumVersion = 11.3.0;
 			};
 		};
+		11B11ECF2CCB036300FEC138 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -377,6 +389,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 112E0FDD2CBDA27300EE9226 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
+		};
+		11B11ED02CCB036300FEC138 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11B11ECF2CCB036300FEC138 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
