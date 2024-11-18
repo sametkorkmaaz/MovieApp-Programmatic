@@ -12,8 +12,14 @@ protocol DetailViewModelInterface{
     func viewDidLoad()
 }
 
-final class DetailViewModel {
+class DetailViewModel {
     weak var view: DetailViewInterface?
+    
+    var movieDetail: Search? // Seçilen filmin detaylarını tutacak
+    
+    func setMovieDetail(_ detail: Search) {
+        self.movieDetail = detail
+    }
 }
 
 extension DetailViewModel: DetailViewModelInterface{

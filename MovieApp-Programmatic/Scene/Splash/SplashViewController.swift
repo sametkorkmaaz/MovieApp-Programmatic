@@ -31,14 +31,6 @@ final class SplashViewController: UIViewController {
         super.viewDidLoad()
         viewModel.view = self
         viewModel.viewDidLoad()
-        /*    MovieService().fetchMovies(movieTitle: "recep") { result in
-         switch result {
-         case .success(let movies):
-         print(movies)
-         case .failure(let error):
-         print(error)
-         }
-         } */
     }
 }
 
