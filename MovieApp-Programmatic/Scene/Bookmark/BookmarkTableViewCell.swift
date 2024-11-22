@@ -1,15 +1,15 @@
 //
-//  SearchTableViewCell.swift
+//  BookmarkTableViewCell.swift
 //  MovieApp-Programmatic
 //
-//  Created by Samet Korkmaz on 25.10.2024.
+//  Created by Samet Korkmaz on 19.11.2024.
 //
 
 import UIKit
 import Kingfisher
 
-class SearchTableViewCell: UITableViewCell {
-
+class BookmarkTableViewCell: UITableViewCell {
+    
     private lazy var moviePoster: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
@@ -24,11 +24,11 @@ class SearchTableViewCell: UITableViewCell {
         label.numberOfLines = 2
         return label
     }()
-
+    
     enum Identifier: String{
-        case custom = "searchCell"
+        case custom = "BookmarkCell"
     }
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configure()
@@ -61,7 +61,9 @@ class SearchTableViewCell: UITableViewCell {
     
     func cellDataModel(model: Search){
         movieTitle.text = model.title
-        moviePoster.kf.setImage(with: URL(string: model.poster!))
+        if let poster = model.poster {
+            moviePoster.kf.setImage(with: URL(string: poster))
+        }
     }
-
+    
 }

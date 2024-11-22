@@ -60,9 +60,9 @@ extension SplashViewController: SplashViewInterface {
     }
     
     func presentSearchScreen() {
-        let Search_VC = SearchViewController()
-        Search_VC.modalPresentationStyle = .fullScreen
-        present(Search_VC, animated: false, completion: nil)
+        let Tabbar_VC = TabbarViewController()
+        Tabbar_VC.modalPresentationStyle = .fullScreen
+        present(Tabbar_VC, animated: false, completion: nil)
     }
     
     func showNetworkError() {

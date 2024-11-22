@@ -8,12 +8,18 @@
 import UIKit
 
 protocol SearchViewInterface: AnyObject {
+    
     func preparePage()
     func reloadTableViewData()
+    func showAlert(with title: String, message: String)
+    func setupActivityIndicator()
+    func startActivityIndicator()
+    func stopActivityIndicator()
 }
 
 final class SearchViewController: UIViewController {
 
+    var activityIndicator : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 100 ,y: 150, width: 80, height: 80)) as UIActivityIndicatorView
     private lazy var searchTitle: UILabel = {
         let searchTitle = UILabel()
         searchTitle.text = "Kefiyli Seyirler"
@@ -44,10 +50,18 @@ final class SearchViewController: UIViewController {
         viewModel.view = self
         viewModel.viewDidLoad()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true) // Geri dönerken tekrar göster
+    }
 }
 
 extension SearchViewController: SearchViewInterface {
+    
     func preparePage() {
         view.backgroundColor = .anaColor2
         [searchTitle, searchBar, tableView].forEach{
@@ -78,6 +92,37 @@ extension SearchViewController: SearchViewInterface {
     func reloadTableViewData() {
         print("reload tablevİEW")
         tableView.reloadData()
+    }
+    
+    func showAlert(with title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+            self.stopActivityIndicator()
+        }
+    }
+    func setupActivityIndicator() {
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .loodos
+        activityIndicator.style = UIActivityIndicatorView.Style.large
+        activityIndicator.backgroundColor = .anaColor2
+        activityIndicator.layer.cornerRadius = 10
+        self.view.addSubview(activityIndicator)
+        }
+    
+    func startActivityIndicator() {
+        print("start")
+        activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+    }
+    
+    func stopActivityIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndicator.isHidden = true
+            self.activityIndicator.stopAnimating()
+        }
     }
 }
 
@@ -121,10 +166,5 @@ extension SearchViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()  // Klavyeyi gizler
     }
 
-    // Arama çubuğu iptal edildiğinde tetiklenen metod
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print("Arama iptal edildi")
-        searchBar.text = ""
-        searchBar.resignFirstResponder()  // Klavyeyi gizler
-    }
+    // Arama çubuğu iptal edildiğinde tetiklenen met
 }

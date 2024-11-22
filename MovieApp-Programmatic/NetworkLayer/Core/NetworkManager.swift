@@ -18,7 +18,7 @@ class NetworkManager {
     
     private init() {}
     
-    // Generic function to handle API requests and parse JSON response
+    // Generic 
     func fetchData<T: Codable>(from urlString: String, completion: @escaping (Result<T, NetworkError>) -> Void) {
         guard let url = URL(string: urlString) else {
             completion(.failure(.invalidURL))
