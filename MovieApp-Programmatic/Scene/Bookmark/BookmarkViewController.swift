@@ -14,7 +14,6 @@ protocol BookmarkViewInterface: AnyObject {
 }
 
 final class BookmarkViewController: UIViewController {
-
     
     private let pageTitle: UILabel = {
         let lbl = UILabel()
@@ -35,6 +34,7 @@ final class BookmarkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.view = self
+        DetailViewController().delegate = self
         viewModel.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -72,8 +72,16 @@ extension BookmarkViewController: BookmarkViewInterface {
             
         ])
     }
+    
     func tableViewReloadData() {
+        print("reload table viewwww")
         tableView.reloadData()
+    }
+}
+
+extension BookmarkViewController: detailViewBookmarkButtonTapped {
+    func bookmarkButtonTapped() {
+        viewModel.fetchBookmarkMovies() 
     }
 }
 
@@ -92,7 +100,10 @@ extension BookmarkViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = DetailViewController()
         let selectedMovie = viewModel.bookmarkMovies[indexPath.row]
+        
         detailVC.viewModel.setMovieDetail(selectedMovie) // Seçilen filmi gönderiyoruz
+        detailVC.delegate = self
+        
         detailVC.modalPresentationStyle = .formSheet
         present(detailVC, animated: true, completion: nil)
     }
