@@ -2,6 +2,10 @@ import UIKit
 import Kingfisher
 import FirebaseAnalytics
 
+protocol detailViewBookmarkButtonTapped: AnyObject {
+    func bookmarkButtonTapped()
+}
+
 protocol DetailViewInterface: AnyObject {
     func preparePage()
     func updateBookmarkButton(isBookmarked: Bool)
@@ -46,6 +50,7 @@ class DetailViewController: UIViewController {
         return button
     }()
     
+    weak var delegate: detailViewBookmarkButtonTapped?
     lazy var viewModel = DetailViewModel()
     
     override func viewDidLoad() {
@@ -60,7 +65,9 @@ class DetailViewController: UIViewController {
     }
     
     @objc func bookmarkButtonTapped() {
+        print("bookmarkk tappeddd on detailll")
         viewModel.toggleBookmark()
+        delegate?.bookmarkButtonTapped()
     }
 }
 
@@ -94,7 +101,7 @@ extension DetailViewController: DetailViewInterface {
             bookmarkButton.widthAnchor.constraint(equalToConstant: 50)
         ])
         
-        // ViewModel'deki mevcut veriyi UI'ya aktar
+        // update UI
         if let movie = viewModel.movieDetail {
             movieTitleLabel.text = movie.title
             movieYearLabel.text = "Year: \(movie.year ?? "N/A")"
