@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     private lazy var movieImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .clear
+        imageView.backgroundColor = .anaColor2
         return imageView
     }()
     

@@ -34,7 +34,6 @@ final class BookmarkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.view = self
-        DetailViewController().delegate = self
         viewModel.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -102,7 +101,7 @@ extension BookmarkViewController: UITableViewDelegate, UITableViewDataSource {
         let selectedMovie = viewModel.bookmarkMovies[indexPath.row]
         
         detailVC.viewModel.setMovieDetail(selectedMovie) // Seçilen filmi gönderiyoruz
-        detailVC.delegate = self
+        detailVC.delegate = self // detailbookmarkbuttontapped delegate
         
         detailVC.modalPresentationStyle = .formSheet
         present(detailVC, animated: true, completion: nil)
