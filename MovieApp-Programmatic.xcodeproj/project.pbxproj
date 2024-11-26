@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,7 +20,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		112E0F972CBCE90600EE9226 /* Exceptions for "MovieApp-Programmatic" folder in "MovieApp-Programmatic" target */ = {
+		112E0F972CBCE90600EE9226 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -30,14 +30,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		112E0F872CBCE90500EE9226 /* MovieApp-Programmatic */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				112E0F972CBCE90600EE9226 /* Exceptions for "MovieApp-Programmatic" folder in "MovieApp-Programmatic" target */,
-			);
-			path = "MovieApp-Programmatic";
-			sourceTree = "<group>";
-		};
+		112E0F872CBCE90500EE9226 /* MovieApp-Programmatic */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (112E0F972CBCE90600EE9226 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "MovieApp-Programmatic"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +119,7 @@
 				};
 			};
 			buildConfigurationList = 112E0F802CBCE90500EE9226 /* Build configuration list for PBXProject "MovieApp-Programmatic" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -138,7 +132,6 @@
 				112E0FDD2CBDA27300EE9226 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				11B11ECF2CCB036300FEC138 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 112E0F862CBCE90500EE9226 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
