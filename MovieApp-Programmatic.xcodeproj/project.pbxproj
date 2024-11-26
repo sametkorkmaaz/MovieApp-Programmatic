@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		112E0FE32CBDA27300EE9226 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 112E0FE22CBDA27300EE9226 /* FirebaseRemoteConfig */; };
 		116D3FA22CF0DAAE00AE5E08 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116D3FA12CF0DAAE00AE5E08 /* AdSupport.framework */; };
 		11B11ED12CCB036300FEC138 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 11B11ED02CCB036300FEC138 /* Kingfisher */; };
+		11E9B1032CF622CD00BF8A76 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 11E9B1022CF622CD00BF8A76 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 				112E0FE32CBDA27300EE9226 /* FirebaseRemoteConfig in Frameworks */,
 				112E0FDF2CBDA27300EE9226 /* FirebaseAnalytics in Frameworks */,
 				112E0FE12CBDA27300EE9226 /* FirebaseCrashlytics in Frameworks */,
+				11E9B1032CF622CD00BF8A76 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +100,7 @@
 				112E0FE02CBDA27300EE9226 /* FirebaseCrashlytics */,
 				112E0FE22CBDA27300EE9226 /* FirebaseRemoteConfig */,
 				11B11ED02CCB036300FEC138 /* Kingfisher */,
+				11E9B1022CF622CD00BF8A76 /* IQKeyboardManagerSwift */,
 			);
 			productName = "MovieApp-Programmatic";
 			productReference = 112E0F852CBCE90500EE9226 /* MovieApp-Programmatic.app */;
@@ -131,6 +134,7 @@
 			packageReferences = (
 				112E0FDD2CBDA27300EE9226 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				11B11ECF2CCB036300FEC138 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				11E9B1012CF622CD00BF8A76 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 112E0F862CBCE90500EE9226 /* Products */;
 			projectDirPath = "";
@@ -174,8 +178,8 @@
 				INFOPLIST_FILE = "MovieApp-Programmatic/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -202,8 +206,8 @@
 				INFOPLIST_FILE = "MovieApp-Programmatic/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -377,6 +381,14 @@
 				minimumVersion = 8.1.0;
 			};
 		};
+		11E9B1012CF622CD00BF8A76 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -399,6 +411,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 11B11ECF2CCB036300FEC138 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		11E9B1022CF622CD00BF8A76 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11E9B1012CF622CD00BF8A76 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
